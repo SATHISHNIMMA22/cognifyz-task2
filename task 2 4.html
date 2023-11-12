@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mobile-Friendly Navigation Bar</title>
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }        
+        .navbar {
+             background-color:aquamarine;
+            color: black;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+        }
+
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            background-color: aquamarine;
+            top: 60px;
+            left: 0;
+        }
+
+        .navbar-links.show {
+            display: flex;
+        }
+
+        .menu-toggle:checked + .menu-icon {
+            display: block;
+        }
+
+        .menu-toggle:checked ~ .navbar-links {
+            display: flex;
+        }
+    }    
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">cognifyz</div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
